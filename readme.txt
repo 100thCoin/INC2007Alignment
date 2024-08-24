@@ -9,7 +9,7 @@ Console A passes the tests of "INC2007Alignment_A.nes" and so on.
 This cartridge is designed to determine the current alignment of the CPU clock and PPU clock.
 
 This cartridge is expecting the values that my console uses, though results may vary.
-If this fails on your console, try running INC2007Alignment_OffBy1.nes
+If this fails on your console, try running INC2007Alignment_A.nes
 
 Setup: The VRAM Read Buffer is prepared with the value $55.
 All bytes in VRAM $2000 through $23BF are set to $00.
