@@ -74,7 +74,7 @@ ExpectedTest_A3_6	= $01
 
 
 	
-	; Exmaple output: (Phase 0 PASS)	
+	; Example output: (Phase 0 PASS)	
 	;
 	;	PASS
 	;
@@ -95,7 +95,7 @@ ExpectedTest_A3_6	= $01
 	;	PHASE 0
 	;
 	
-	; Exmaple output: (Unknown phase. This console behaved differently than mine.)	
+	; Example output: (Unknown phase. This console behaved differently than mine.)	
 	;
 	;	FAILED TEST 1
 	;
@@ -108,7 +108,7 @@ ExpectedTest_A3_6	= $01
 	;	2156: 56
 	;
 	
-	; Exmaple output: (Phase 1) 
+	; Example output: (Phase 1) 
 	; (I've added extra comments that would not be diplayed, but are for your convenience.)	
 	;
 	;	PASS
@@ -130,7 +130,7 @@ ExpectedTest_A3_6	= $01
 	;	PHASE 1
 	;
 	
-	; Exmaple output: (Phase 2) The first visible screen that is shown before the result screen. 
+	; Example output: (Phase 2) The first visible screen that is shown before the result screen. 
 	; (I've added extra comments that would not be diplayed, but are for your convenience.)	
 	;
 	;	0000000000000000000000000000000000000000000000000000000000000000	; (dark) The first 8 lines are darker, as the test should not affect any of these bytes.
@@ -159,7 +159,7 @@ ExpectedTest_A3_6	= $01
 	;	0000000000000000000000000000000000000000000000000000000000000000	; (dark) This is the final line.
 	;
 
-	; Exmaple output: (Phase 2) The second visible screen that is shown before the result screen. 
+	; Example output: (Phase 2) The second visible screen that is shown before the result screen. 
 	; (I've added extra comments that would not be diplayed, but are for your convenience.)	
 	;
 	;	0000000000000000000000000000000000000000000000000000000000000000	; (dark) The first 8 lines are darker, as the test should not affect any of these bytes.
