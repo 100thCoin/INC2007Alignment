@@ -548,7 +548,7 @@ PrintErrorTest2:
 
 
 ErrorTest3MessageList:
-	.byte 16
+	.byte 22
 	.word MSG_Test1Fail_ln1
 	.word MSG_Test3Fail_Ln1
 	.word MSG_EMPTY
@@ -565,6 +565,12 @@ ErrorTest3MessageList:
 	.word MSG_EMPTY
 	.word MST_LineBrk
 	.word MSG_EMPTY
+	.word MSG_Test3Fail_Ln2
+	.word MSG_Test3Fail_Ln3
+	.word MSG_EMPTY
+	.word MSG_Test3Fail_Ln4
+	.word MSG_Test3Fail_Ln5
+	.word MSG_Test3Fail_Ln6
 
 
 PrintErrorTest3:
@@ -864,8 +870,33 @@ MST_Test2Fail_Ln6:
 	.byte	 27, _T, _H, _E, __, _N, _E, _W, __, _V, _A, _L, _U, _E, __, _O, _F, __, _P, _P, _U, _A, _D, _D, _R, __, _H, _I
 
 	
-MSG_Test3Fail_Ln1
+	
+;The extra write cannot
+;update the color palettes
+
+;The extra write can be 
+;seen at a mirror of
+;address $3F00, at $2F00
+	
+
+MSG_Test3Fail_Ln1:
 	.byte	 25, _P, _P, _U, _A, _D, _D, _R, __, _I, _N, __, _C, _O, _L, _O, _R, __, _P, _A, _L, _E, _T, _T, _E, _S
+MSG_Test3Fail_Ln2:
+	.byte	 22, _T, _H, _E, __, _E, _X, _T, _R, _A, __, _W, _R, _I, _T, _E, __, _C, _A, _N, _N, _O, _T
+MSG_Test3Fail_Ln3:
+	.byte	 25, _U, _P, _D, _A, _T, _E, __, _T, _H, _E, __, _C, _O, _L, _O, _R, __, _P, _A, _L, _E, _T, _T, _E, _S
+MSG_Test3Fail_Ln4:
+	.byte	 23, _T, _H, _E, __, _E, _X, _T, _R, _A, __, _W, _R, _I, _T, _E, __, _C, _A, _N, __, _B, _E, __
+MSG_Test3Fail_Ln5:
+	.byte	 19, _S, _E, _E, _N, __, _A, _T, __, _A, __, _M, _I, _R, _R, _O, _R, __, _O, _F
+MSG_Test3Fail_Ln6:
+	.byte	 22, _A, _D, _D, _R, _E, _S, _S, __, _hx, _3, _F, _0, _0, __, _A, _T, __, _hx, _2, _F, _0, _0
+	
+	
+	
+	
+	
+	
 	
 	
 	
