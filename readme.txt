@@ -108,3 +108,34 @@ Expected results:
 
 
 See the screenshots provided in the screenshots folder for the test screens and results.
+
+--------------
+RMW $2007 Test
+--------------
+
+This cartridge runs a series of INC $2007 instructions with different PPUADDR values and different buffer contents.
+It runs 3 tests.
+
+Test 1: Verify that INC $2007 is creating extra writes
+Test 2: Verify that the high byte of the extra write's address changes if PPUADDR crosses a page boundary during the INC isntruction.
+Test 3: Verify that the extra write is incapable of updating color palette information; instead, the write can be seen by reading the mirror at $2Fzz.
+
+-----------------------
+
+Test 1: runs 4 tests.
+- Buffer holds 55, VRAM Address = $2110. INC $2007. Result: Vram $2156 = $56
+- Buffer holds 7F, VRAM Address = $2000. INC $2007. Result: Vram $2080 = $80
+- Buffer holds 00, VRAM Address = $2F7F. INC $2007. Result: Vram $2F01 = $01
+- Buffer holds FF, VRAM Address = $2222. INC $2007. Result: Vram $2200 = $00
+
+It's worth noting that there's potentially another extra write occuring, though it's different depending on the console revision, as well as the alignment between the CPU and PPU clocks.
+This ROM only tests for one of the writes.
+
+Test 2: runs 2 tests
+- Buffer holds 55, VRAM Address = $21FF. INC $2007. Result: Vram $2256 = $56
+- Buffer holds 7F, VRAM Address = $1FFF. INC $2007. Result: Vram $2080 = $80
+
+Test 3: runs 2 tests
+- Buffer holds 04, VRAM Address = $3F00. INC $2007. Result: Vram $2F05 = $05
+- Buffer holds 20, VRAM Address = $3F14. INC $2007. Result: Vram $2F11 = $11
+Test 3 only verifies that the palettes aren't being modified. The extra write doesn't appear to occur if the CPU and PPU clocks are on the same master clock cycle. (alignment 0)
